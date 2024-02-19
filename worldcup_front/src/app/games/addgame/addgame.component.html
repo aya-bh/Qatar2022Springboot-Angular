@@ -1,0 +1,84 @@
+<div>
+  <div class="submit-form">
+    
+
+    <form
+    
+    name="form"
+    (ngSubmit)="f.form.valid && savegame()"
+    #f="ngForm"
+    novalidate
+  >
+  <div class="form-group">
+    <label for="name">name </label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      required
+      [(ngModel)]="game.name"
+      name="name"
+    />
+  </div>    
+  <div class="form-group">
+        <label for="team1">team1 </label>
+        <input
+          type="text"
+          class="form-control"
+          id="team1"
+          required
+          [(ngModel)]="game.equipe1"
+          name="team1"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="team2">team2</label>
+        <input
+          class="form-control"
+          id="team2"
+          required
+          [(ngModel)]="game.equipe2"
+          name="team2"
+        />
+      </div>
+      <div class="form-group">
+        <label for="date">date </label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          required
+          [(ngModel)]="game.date"
+          name="date"
+        />
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="stad">stad</label>
+        <input
+          class="form-control"
+          id="stad"
+          required
+          [(ngModel)]="game.stad"
+          name="stad"
+        />
+      </div>
+
+
+
+     
+      </form>
+
+      <button (click)="savegame()" class="btn btn-success">Submit</button>
+   
+
+    <div *ngIf="submitted">
+      <h4>Game was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newgame()">Add</button>
+    </div>
+  </div>
+</div>
